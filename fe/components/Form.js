@@ -1,8 +1,9 @@
-import { CircularProgress, Link, Div, Typography } from "@mui/material";
+import { CircularProgress, Link, Div, Typography, Button } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState, useEffect } from "react";
 import useBlockChain from "../hooks/useBlockChain";
 import DeployWalletForm from "../components/DeployWalletForm";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 
 const Form = () => {
   const {
@@ -26,9 +27,9 @@ const Form = () => {
     hash: txn.hash,
     from: txn.from,
     to: txn.to,
-    url: `https://rinkeby.etherscan.io/tx/${txn.hash}`,
+    url: `https://mumbai.polygonscan.com/tx/${txn.hash}`,
     walleturl: `${host}/wallet/${address}`,
-    walletexplorer: `https://rinkeby.etherscan.io/address/${address}`,
+    walletexplorer: `https://mumbai.polygonscan.com/address/${address}`,
   };
 
   console.log(host);
@@ -36,10 +37,23 @@ const Form = () => {
   const RenderWallet = () => {
     return (
       <>
-        <Box sx={{ m: 2 }} textAlign="center">
+        <Box sx={{ m: 5 }} textAlign="center">
+          <Link
+            href={transaction.url}
+            target="_blank"
+            variant="h6"
+            rel="noopener noreferrer"
+            underline="always"
+          >
+            View Transaction on Polygonscan
+          </Link>
+        </Box>
+        <Box sx={{ m: 5 }} textAlign="center">
           <Typography variant="h5" gutterBottom component="div" sx={{ mb: 5 }}>
-            Wallet Successfully Deployed to {address} 🥳🥳
+            Wallet Contract Successfully Deployed to {address} 🥳🥳
           </Typography>
+        </Box>
+        <Box sx={{ m: 2 }} textAlign="center">
           <Link
             href={transaction.walleturl}
             variant="h5"
@@ -48,19 +62,14 @@ const Form = () => {
             sx={{ mb: 2 }}
             underline="always"
           >
-            {transaction.walleturl}
-          </Link>
-          <Box sx={{ m: 5 }} textAlign="center">
-            <Link
-              href={transaction.walletexplorer}
-              target="_blank"
-              variant="h6"
-              rel="noopener noreferrer"
-              underline="always"
+            <Button
+              variant="contained"
+              size="large"
+              endIcon={<RocketLaunchIcon />}
             >
-              View on Etherscan
-            </Link>
-          </Box>
+              Get Started
+            </Button>
+          </Link>
         </Box>
       </>
     );

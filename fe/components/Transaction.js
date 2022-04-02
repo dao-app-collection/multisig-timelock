@@ -44,7 +44,7 @@ const Transaction = (props) => {
       await getNumTransactionsinWallet();
     } catch (error) {
       console.error(error);
-      window.alert(error.data.message);
+      alert(error);
     }
   };
 
@@ -165,7 +165,7 @@ const Transaction = (props) => {
       await getNumTransactionsinWallet();
     } catch (error) {
       console.error(error);
-      window.alert(error.data.message);
+      window.alert(error.data ? error.data.message : error.message);
     }
   };
 
@@ -392,7 +392,7 @@ const Transaction = (props) => {
                   underline="hover"
                   target="_blank"
                 >
-                  View On Etherscan
+                  View Contract On Polygonscan
                 </Link>
               </Grid>
             </>

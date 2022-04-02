@@ -53,7 +53,7 @@ export default function AddBalance({ receive }) {
             autoFocus
             margin="dense"
             id="amount"
-            label="Amount (In ETH)"
+            label="Amount (MATIC)"
             type="number"
             fullWidth
             onChange={handleChange}

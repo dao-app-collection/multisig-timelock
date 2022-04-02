@@ -51,7 +51,7 @@ const CreateTransaction = (props) => {
         <DialogTitle>Create a New Transaction</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter recipient eth address, value(ETH) and data(bytes)
+            Enter recipient metmask address, value(MATIC) and data(bytes)
           </DialogContentText>
           <TextField
             autoFocus
@@ -69,7 +69,7 @@ const CreateTransaction = (props) => {
             margin="dense"
             id="value"
             name="value"
-            label="Value (ETH)"
+            label="Value (MATIC)"
             type="number"
             onChange={(e) => setValue(e.target.value)}
             fullWidth
