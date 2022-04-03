@@ -44,7 +44,7 @@ const Transaction = (props) => {
       await getNumTransactionsinWallet();
     } catch (error) {
       console.error(error);
-      alert(error);
+      alert(error.data ? error.data.message : error.message);
     }
   };
 
