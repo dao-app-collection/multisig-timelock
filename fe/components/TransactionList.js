@@ -57,7 +57,7 @@ const TransactionList = ({
             <Box key={transaction.transactionId} sx={{ mb: 3, boxShadow: 2 }}>
               <ListItem>
                 <ListItemText
-                  primary={utils.formatEther(transaction.value) + " ETH"}
+                  primary={utils.formatEther(transaction.value) + " MATIC"}
                   sx={{ mr: 2 }}
                 />
                 <ListItemIcon>
